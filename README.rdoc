@@ -1,6 +1,37 @@
 = governor_tags
 
-Description goes here.
+<b>Governor[http://carpeliam.github.com/governor/]</b> (named after Rod
+Blagojevich) is the pluggable blogging platform for Rails, built for people
+who want to build their blog into their website, not build their website into
+their blog.
+
+*governor_tags* is a plugin for Governor, allowing you to add and remove tags
+to/from your articles.
+
+== Dependencies
+
+* Governor.
+* ActiveRecord
+
+== Setting Up
+
+First, install Governor[http://carpeliam.github.com/governor/]. Then, in
+your Gemfile, add the following:
+
+    gem 'governor_tags'
+
+Once you've installed the gem into your app, you need to run the generator:
+
+    rails generate governor:create_tags [RESOURCE]
+
+If you've only created one type of resource (which is typical), then you won't
+need any arguments. Otherwise, you'll need to specify which model you want to
+add tags to. This will create a Tag class and associated migration.
+
+== Usage
+
+Now, when you modify an article, you'll see places to add tags right in the
+page. You really don't have to do anything special at this point.
 
 == Contributing to governor_tags
  

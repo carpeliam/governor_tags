@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :article do |a|
     a.title "Some article"
-    a.post "It's about the benjis"
+    a.post "This is the post. It shouldn't be blank."
   end
   
   factory :user do |u|

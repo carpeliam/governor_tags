@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "governor_tags"
   gem.homepage = "http://github.com/carpeliam/governor_tags"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Tagging plugin for the Rails 3-based Governor blogging system.}
+  gem.description = %Q{A plugin for the Rails 3-based Governor blogging system that enables you to tag your articles.}
   gem.email = "liam@carpeliam.com"
   gem.authors = ["Liam Morley"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
