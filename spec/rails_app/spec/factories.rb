@@ -9,4 +9,8 @@ FactoryGirl.define do
     u.password 'ca$hmoney'
     u.password_confirmation 'ca$hmoney'
   end
+  
+  factory :tag do |t|
+    t.name 'misconduct'
+  end
 end

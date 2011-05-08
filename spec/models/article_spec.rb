@@ -15,4 +15,23 @@ describe Article do
     article.save
     article.tag_list.should == 'kicking ass,chewing bubblegum'
   end
+  
+  context "with a different delimiter" do
+    before do
+      GovernorTags.delimiter = ' '
+    end
+    it "can accept a list of tags" do
+      expect {
+        article.tag_list = 'a woodchuck would chuck all the wood he could chuck, if a woodchuck could chuck wood'
+        article.save
+      }.to change{Tag.count}.from(0).to(11)
+      article.tags.map(&:name).should == %w(a woodchuck would chuck all the wood he could chuck, if)
+    end
+
+    it "displays the list of tags" do
+      article.tags = [Tag.create(:name => 'kicking ass'), Tag.create(:name => 'chewing bubblegum')]
+      article.save
+      article.tag_list.should == 'kicking ass chewing bubblegum'
+    end
+  end
 end

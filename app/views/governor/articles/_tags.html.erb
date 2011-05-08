@@ -1,4 +1,6 @@
+<div class="tags">
 Tags:
-<% resource.tags.each do |tag| %>
-  <b><%= link_to tag.name, tag %></b>
+<% article.tags.each do |tag| %>
+  <span class="tag"><%= link_to tag.name, tag %></span>
 <% end %>
+</div>
