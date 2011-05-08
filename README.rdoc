@@ -31,7 +31,23 @@ add tags to. This will create a Tag class and associated migration.
 == Usage
 
 Now, when you modify an article, you'll see places to add tags right in the
-page. You really don't have to do anything special at this point.
+page.
+
+If you'd like to display a list of tags with links to each tag as a helper
+(maybe as part of a sidebar), you can call the following helper:
+
+    <%= tag_list @your_tags %>
+
+where <code>@your_tags</code> is an array of tags.
+
+Also, if you'd like to have a JSON-searchable list of tags, perhaps for use
+with an autocomplete feature, you can pass your query on to
+<code>/:resources/tags/query</code>, where <code>:resources</code> corresponds
+to the resource type you chose above. If you're using the default Governor
+resource type, this would be <code>/articles/tags/query</code>. Here's a
+snippet, if you're using jQuery:
+
+    $.getJSON("/articles/tags/query", {query: request.term.split(/,\s*/).pop()}, response);
 
 == Contributing to governor_tags
  

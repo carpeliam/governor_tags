@@ -5,7 +5,11 @@ tags = Governor::Plugin.new('tags')
 
 tags.set_routes do
   collection do
-    resources :tags, :only => :show, :module => :governor
+    resources :tags, :only => :show, :module => :governor do
+      collection do
+        get :query
+      end
+    end
   end
 end
 tags.register_model_callback do |base|
