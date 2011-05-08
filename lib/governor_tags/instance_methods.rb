@@ -4,7 +4,7 @@ module GovernorTags
       self.tags.map{|t| t.name }.join(GovernorTags.delimiter)
     end
     def tag_list=(tag_names)
-      self.tags = tag_names.split(GovernorTags.delimiter).map{|t| Tag.find_or_create_by_name(t.strip) }
+      self.tags = tag_names.split(GovernorTags.delimiter).reject{|t| t.blank? }.map{|t| Tag.find_or_create_by_name(t.strip) }
     end
   end
 end

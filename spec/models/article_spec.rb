@@ -10,6 +10,14 @@ describe Article do
     article.tags.map(&:name).should == ['i fell in love again', 'all things go']
   end
   
+  it "trims blank tags" do
+    expect {
+      article.tag_list = 'drove to chicago, , all things know, all things know, '
+      article.save
+    }.to change{Tag.count}.from(0).to(2)
+    article.tags.map(&:name).should == ['drove to chicago', 'all things know']
+  end
+  
   it "displays the list of tags" do
     article.tags = [Tag.create(:name => 'kicking ass'), Tag.create(:name => 'chewing bubblegum')]
     article.save
