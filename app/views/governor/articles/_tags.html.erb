@@ -1,6 +1,8 @@
-<div class="tags">
-Tags:
-<% article.tags.each do |tag| %>
-  <span class="tag"><%= link_to tag.name, tag %></span>
+<% if article.tags.present? %>
+  <div class="tags">
+  Tags:
+  <% article.tags.each do |tag| %>
+    <span class="tag"><%= link_to tag.name, tag %></span>
+  <% end %>
+  </div>
 <% end %>
-</div>
