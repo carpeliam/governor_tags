@@ -1,4 +1,4 @@
 Tags:
 <% resource.tags.each do |tag| %>
-  <b><%= tag.name %></b>
+  <b><%= link_to tag.name, tag %></b>
 <% end %>

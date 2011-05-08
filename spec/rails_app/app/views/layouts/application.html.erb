@@ -16,6 +16,8 @@
 <% end %>
 | <%= link_to 'articles', articles_path %>
 
+<div class="notice"><%= flash[:notice] %></div>
+
 <%= yield %>
 
 </body>

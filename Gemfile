@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '~> 3.0.5'
 
-gem 'governor'
+gem 'governor', '>= 0.5.1'
 
 group :development, :test do
   gem 'jeweler', '~> 1.5.2'

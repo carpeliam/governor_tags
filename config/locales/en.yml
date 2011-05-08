@@ -1,0 +1,3 @@
+en:
+  governor_tags:
+    tags_for: 'Showing %{resource_type} tagged as "%{tag}".'
