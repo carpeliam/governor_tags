@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{governor_tags}
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Liam Morley"]
@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "app/controllers/governor/tags_controller.rb",
-    "app/helpers/governor_application_helper.rb",
+    "app/helpers/governor_tags_application_helper.rb",
     "app/views/governor/articles/_tag_form.html.erb",
     "app/views/governor/articles/_tags.html.erb",
     "config/locales/en.yml",
