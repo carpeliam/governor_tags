@@ -1,4 +1,4 @@
-module GovernorApplicationHelper
+module GovernorTagsApplicationHelper
   def tag_list(tags)
     content_tag :div, :class => 'tag_list' do
       concat 'Tag List'
