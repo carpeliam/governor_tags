@@ -9,7 +9,11 @@ module Governor
     
     def show
       @tag = Tag.find(params[:id], :include => :resources)
-      set_resources @tag.resources
+      set_resources(if model_class.respond_to?(:paginate)
+        @tag.resources.paginate :page => params[:page]
+      else
+        @tag.resources
+      end)
       flash[:notice] = t('governor_tags.tags_for', :resource_type => params[:governor_mapping], :tag => @tag.name)
       render :template => 'governor/articles/index'
     end
